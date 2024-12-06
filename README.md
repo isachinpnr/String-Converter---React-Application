@@ -1,12 +1,13 @@
-<<<<<<< HEAD
+
 # String-Converter---React-Application
 this is a " String Converter " tools based on React Technologies . User can modify their text with amazing functionalites with one click !
 =======
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
+
+# Authoer & Developer - Sachin Panwar 
+# Contact - uttarakhandtechnology@gmail.com
 
 In the project directory, you can run:
 
@@ -72,4 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> fb65df4 (Initialize project using Create React App)
+
