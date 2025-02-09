@@ -62,7 +62,7 @@ export default function TextBox3(props) {
                 <p><b>{text.split(" ").filter((element) => { return element.length !== 0 }).length}</b> words and <b>{text.length}</b> charactors...</p>
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length}Minutes Read</p>
                 <h3>Preview</h3>
-                <p>{text.length > 0 ? text : 'Enter Your text to preview it here'}</p>
+                <p>{text.length > 0 ? text : 'Nothing to Preview'}</p>
             </div>
         </>
     )
