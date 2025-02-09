@@ -25,11 +25,11 @@ export default function TextBox3(props) {
         navigator.clipboard.writeText(text.value);
         alert("String Copy")
     }
-    const handlerOnReverseText=()=>{
+    const handlerOnReverseText = () => {
         let newText = text.split('').reverse().join('');
-            setText(newText);
-            props.showAlert("String Reverse")
-        
+        setText(newText);
+        props.showAlert("String Reverse")
+
     }
     const handlerOnExtraSpace = () => {
         let newText = text.split(/[ ]+/);
@@ -43,24 +43,24 @@ export default function TextBox3(props) {
         <>
 
             <div className="container">
-                <h1 style={{ color: props.mode === 'light' ? 'black' : 'white', fontWeight: '700' }}>A string Converter Tool</h1>
+                <h1 style={{ color: props.mode === 'light' ? 'black' : 'white', fontWeight: '700' }}>{props.heading}</h1>
                 <div className="form-floating">
                     <textarea className="form-control my-box" onChange={handlerOnChange} value={text} id="floatingTextarea2" style={{ backgroundColor: props.mode === 'light' ? 'white' : 'grey', height: '200px', border: '2px solid black', color: props.mode === 'light' ? 'black' : 'white' }}></textarea>
                 </div>
-                <button className='btn btn-primary my-2 mx-1' onClick={handlerOnUpperCase}>Convert UpperCase</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handlerOnLowerCase}>Convert LowerCase</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handlerOnCopy}>Copy Text</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handlerOnExtraSpace}>Remove Extra Space</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handlerOnReverseText}>Reverse String</button>
-                <button className='btn btn-primary my-2 mx-2' onClick={handlerOnClear}>Clear Text</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-1' onClick={handlerOnUpperCase}>Convert UpperCase</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handlerOnLowerCase}>Convert LowerCase</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handlerOnCopy}>Copy Text</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handlerOnExtraSpace}>Remove Extra Space</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handlerOnReverseText}>Reverse String</button>
+                <button disabled={text.length === 0} className='btn btn-primary my-2 mx-2' onClick={handlerOnClear}>Clear Text</button>
 
 
 
             </div>
             <div className="container my-3" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h2>Your text summary</h2>
-                <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> charactors...</p>
-                <p>{0.008 * text.split(" ").length}Minutes Read</p>
+                <p><b>{text.split(" ").filter((element) => { return element.length !== 0 }).length}</b> words and <b>{text.length}</b> charactors...</p>
+                <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length}Minutes Read</p>
                 <h3>Preview</h3>
                 <p>{text.length > 0 ? text : 'Enter Your text to preview it here'}</p>
             </div>
